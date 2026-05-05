@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[#F9F7F2] text-[#1A1A1A] transition-colors duration-300;
+  }
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+.dark body { background-color: #1C1C1E; color: #F5F5F7; }
+
+/* Dark mode overrides for hardcoded Tailwind classes */
+.dark .bg-\[\#F9F7F2\] { background-color: #1C1C1E; } /* App background */
+.dark .bg-\[\#FFFDF9\] { background-color: #1C1C1E; } /* Main workspace background */
+.dark .bg-white { background-color: #2C2C2E; border-color: #3A3A3E; } /* Cards and panels */
+.dark .bg-\[\#EBE8DF\] { background-color: #3A3A3E; } /* Elevated areas / hovers */
+.dark .bg-white\/50 { background-color: rgba(44, 44, 46, 0.8); }
+/* Primary buttons (black in light mode) become off-white in dark mode */
+.dark .bg-\[\#1A1A1A\] { background-color: #F5F5F7; color: #1C1C1E; }
+.dark .bg-\[\#1A1A1A\].text-white { color: #1C1C1E; }
+.dark .bg-\[\#333\] { background-color: #D1D1D6; color: #1C1C1E; }
+.dark .bg-\[\#333\].text-white { color: #1C1C1E; }
+.dark .hover\:bg-\[\#333\]:hover { background-color: #D1D1D6; color: #1C1C1E; }
+
+.dark .text-\[\#1A1A1A\] { color: #F5F5F7; } /* Main text */
+.dark .text-\[\#8C887D\] { color: #9E9D9F; } /* Secondary/Subtle text */
+.dark .text-gray-700 { color: #D1D1D6; }
+.dark .text-\[\#D1CEC5\] { color: #8E8E93; }
+
+.dark .border-\[\#D1CEC5\] { border-color: #3A3A3E; }
+.dark .border-\[\#1A1A1A\] { border-color: #5C5C62; }
+.dark .border-\[\#EBE8DF\] { border-color: #3A3A3E; }
+
+.dark .hover\:bg-\[\#F9F7F2\]:hover { background-color: #3A3A3E; }
+.dark .hover\:bg-\[\#FFFDF9\]:hover { background-color: #3A3A3E; }
+.dark .hover\:bg-\[\#EBE8DF\]:hover { background-color: #48484A; }
+.dark .hover\:border-\[\#1A1A1A\]:hover { border-color: #9E9D9F; }
+.dark .group:hover .group-hover\:text-\[\#1A1A1A\] { color: #F5F5F7; }
+.dark .scrollbar-thumb-\[\#D1CEC5\]::-webkit-scrollbar-thumb { background-color: #5C5C62; }
